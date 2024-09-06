@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Profile from '../components/Profile.astro';
+import AboutMe from '../components/AboutMe.astro';
 import Section from '../layouts/Section.astro';
+import CompanyExperience from '../components/CompanyExperience.astro'
 ---
 
 <Layout title="Matheus Gabriel Klinkonsky">
@@ -11,17 +13,65 @@ import Section from '../layouts/Section.astro';
     <Profile />
 
     <Section heading="About me">
-      <span class="text-zinc-400 [&>b]:text-red-400">
-        A highly skilled and motivated front-end developer with over <b>5 years of professional experience</b>, seeking challenging opportunities to contribute to innovative web development projects. <br /><br />
-        Proficient in <b>Javascript</b>, <b>Typescript</b>, <b>React.js</b> and <b>Next.js</b>, strong expertise in testing methodologies including <b>Jest</b>, <b>React Testing Library</b> and <b>Cypress</b>, libraries and frameworks like <b>Tailwindcss</b>, <b>styled-components</b>, <b>Redux</b>, <b>Tanstack query</b>, <b>GraphQL</b>, <b>Apollo Client</b>, <b>Prisma</b>, <b>Supabase</b>, <b>Radix ui</b>, <b>Material ui</b>, <b>zod</b>, <b>yup</b>, and <b>SASS/LESS</b>. <br /><br />
-        Experienced in Back-end development using <b>Golang</b> and <b>Node.js</b> with <b>Nest.js</b>, and experience with <b>Rust</b>, <b>Lua</b>, <b>Git</b>, <b>Github</b>, <b>Scrum</b>, <b>Kanban</b>, <b>Jira/Notion</b> and <b>Web Design using Figma</b>.
-      </span>
+      <AboutMe />
     </Section>
 
     <Section heading="Projects">
-      <span class="text-zinc-400 [&>b]:text-red-400 pb-20">
-        This section is under construction.
-      </span>
+      <div class="flex flex-col gap-4">
+        <CompanyExperience
+          imageUrl='/sys_manager_informtica_logo.webp'
+          imageAlt='Sysmanager informatica logo'
+        >
+          <span slot="title" class="text-zinc-400 [&>b]:text-red-400"><b>Senior front-end developer</b> - Sysmanager informatica</span>
+          <ul class="list-disc pl-9 text-zinc-300 pt-4 pb-8">
+            <li class="pb-2">Worked on Sybridge</li>
+          </ul>
+        </CompanyExperience>
+
+        <CompanyExperience
+          imageUrl='/sybridge_technologies_logo.webp'
+          imageAlt='Sybridge company logo'
+        >
+          <span slot="title" class="text-zinc-400 [&>b]:text-red-400"><b>Senior full-stack</b> - Sybridge Technologies</span>
+          <ul class="list-disc pl-9 text-zinc-300 pt-4 pb-8">
+            <li class="pb-2">Developed a 3D parts sales platform featuring real-time quotings.</li>
+            <li class="pb-2">Built an internal project to display all orders and quote requests created in the client side.</li>
+            <li class="pb-2">Contributed to create the tests written in Golang.</li>
+            <li class="pb-2">Created OAUTH route in the back-end to handle with third-party libraries</li>
+            <li class="pb-2">Contributed to create the tests with jest, increasing 8% of the system coverage</li>
+            <li class="pb-2">Contributed to quote creation/delete and forward these quote to purchaser</li>
+            <li>Contributed to maintain the internal project to display all orders and quote requests created in the client side.</li>
+          </ul>
+        </CompanyExperience>
+
+        <CompanyExperience
+          imageUrl='/betpass_logo.webp'
+          imageAlt='Betpass logo'
+        >
+          <span slot="title" class="text-zinc-400 [&>b]:text-red-400"><b>Mid Level and Senior full-stack</b> - Betpass</span>
+          <ul class="list-disc pl-9 text-zinc-300 pt-4 pb-8">
+            <li>Contributed to create two MVP's applications.</li>
+            <ol class="list-decimal pl-4 text-zinc-400 pb-8">
+              <li class="pb-2">Affiliapass is an online betting affiliate platform that offers affiliates the flexibility to choose from a variety of bookmakers, allowing them to find the affiliate programs that best suit their needs and goals.</li>
+              <li>Cashpass is an online coupons, promo codes and deals applications, where would recommend these coupons/promos based on user preferences.</li>
+            </ol>
+
+            <li class="pb-2">Created onboarding with missions and achievements for new users to increase affiliate retention and thus increase the company's profit.</li>
+            <li class="pb-2">Refactored existing code to improve code quality, maintainability, and performance.</li>
+            <li class="pb-2">Introduced layouts in the figma creating empty state, not found and increasing the user experience.</li>
+            <li class="pb-2">Introduced tools as biomejs to increase the project build in 35x faster.</li>
+            <li>Introduced patterns to make our developer experience better, patterns as relative paths, test integration, design patterns and composition patterns, and this increased our code readbility and made the code easy to maintance.</li>
+          </ul>
+        </CompanyExperience>
+      </div>
+    </Section>
+
+    <Section heading="About my portfolio website">
+      <ul class="list-disc pl-4 pb-20">
+        <li class="text-zinc-400 [&>b]:text-red-400">I used <b>Astro.js</b> with <b>TailwindCSS</b> to create a very performatic website</li>
+        <li class="text-zinc-400 [&>b]:text-red-400">Image compressed to smaller my image size to <b>46%</b></li>
+        <li class="text-zinc-400 [&>b]:text-red-400">I already worked <b>6h</b> in this website.</li>
+      </ul>
     </Section>
   </main>
 </Layout>

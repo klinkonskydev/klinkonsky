@@ -1,0 +1,44 @@
+---
+interface Props {
+  imageUrl: string;
+  imageAlt: string;
+}
+
+const { imageUrl, imageAlt } = Astro.props;
+---
+
+<details>
+  <summary>
+    <div class="flex items-center gap-2" id="summary-content">
+      <div class="w-6 h-6 rounded overflow-hidden">
+        <img src={imageUrl} width="26px" height="26px" alt={imageAlt} />
+      </div>
+
+      <slot name="title" />
+    </div>
+  </summary>
+
+  <slot />
+</details>
+
+<style>
+  summary {
+    cursor: default;
+    user-select: none;
+  }
+
+  details summary::-webkit-details-marker,
+  details summary::marker {
+   display: none;
+   content: "";
+  }
+
+  #summary-content::before {
+    content: '⬇';
+    transition: all 350ms ease;
+  }
+
+  details[open] #summary-content::before {
+    rotate: -180deg;
+  }
+</style>
